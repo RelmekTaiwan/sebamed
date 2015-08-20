@@ -11,7 +11,7 @@
     <div class="col-md-8 col-md-offset-1 col-xs-12">
 <!-- <div id="contectright"> -->
       <img src="<?php echo e(asset('images\product_line.jpg')); ?>" class="img-responsive">
-      <img src="<?php echo e(asset('images\title1.jpg')); ?>" class="img-responsive">
+      <img src="<?php echo e(asset('images\title1.jpg')); ?>" class="img-responsive hidden-xs">
 <!--   <img src="http://www.sebamed.com.tw//images/bg.jpg" width="718" height="40" align="center" title1>-->
     
 <!--<?php echo e($title); ?>
@@ -41,7 +41,9 @@
          <a href="" data-toggle="modal" data-target="#myModal_<?=$key;?>">
          <img src="<?php echo e(asset('images/products/small/'.$product->image1)); ?>" align="center" ></a>
          <br>
-         <a href="" data-toggle="modal" data-target="#myModal_<?=$key;?>"><?php echo $product->name; ?></a>
+         <div class="pdtx">
+          <a href="" data-toggle="modal" data-target="#myModal_<?=$key;?>"><?php echo $product->name; ?></a>
+         </div>
         </div>
     
 
@@ -52,7 +54,7 @@
         <div class="modal-content">
         <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"><?php echo e($title); ?> </h4>
+        <h4 class="modal-title">產品櫥窗</h4>
         </div>
         <div class="modal-body">
           <div class="row">
@@ -60,7 +62,7 @@
              <img src="<?php echo e(asset('images/products/big/'.$product->image2 )); ?>" >
             </div>
             <div class="col-md-6 col-xs-12" >
-               <p><?php echo e($product->name); ?></p>
+               <div class="t3"><p><?php echo e($product->name); ?></p></div>
                <p><?php echo e($product->name_en); ?></p>
                <p><?php echo $product->description; ?></p>
                <p>規格:<?php echo e($product->specification); ?></p>

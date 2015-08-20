@@ -20,7 +20,9 @@
             <a href="#" data-toggle="modal" data-target="#myModal_<?=$key;?>">
              <img src="{{ asset('images/products/small/'.$product->image1) }}" ></a>
             <br> 
-            <a href="#" data-toggle="modal" data-target="#myModal_<?=$key;?>">{!! $product->name !!}</a>
+            <div class="pdtx">
+             <a href="#" data-toggle="modal" data-target="#myModal_<?=$key;?>">{!! $product->name !!}</a>
+            </div> 
            </div>
               
 	        <!-- Modal -->
@@ -38,7 +40,7 @@
 	           <img src="{{ asset('images/products/big/'.$product->image2 ) }}" >
 	          </div>
 	          <div class="col-md-6 col-xs-12" >
-	          	  <p>{{ $product->name }}</p>
+	          	  <div class="t3"><p>{{ $product->name }}</p></div>
 		          <p>{{ $product->name_en }}</p>
 		          <p>{!! $product->description !!}</p>
 		          <p>規格:{{ $product->specification }}</p>

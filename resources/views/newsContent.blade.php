@@ -5,7 +5,6 @@
     <div class="list" id="pag_list"> 
         <a href="{{ action('HomeController@index')}}">首頁</a> &gt; <a href="{{ action('NewsController@index')}}">最新消息</a>&gt;  {!! $news->title !!}
         <p>
-      </div>
    </div>   
   </div>
 

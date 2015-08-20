@@ -1,10 +1,8 @@
-@extends('seba')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
  <div class="row">
      <div class="col-md-9 col-md-offset-1 col-xs-12" >
       <div class="list hidden-xs" id="pag_list"> 
-        <a href="{{ action('HomeController@index')}}" >首頁</a> &gt; 關於我們 &gt; 品產故事
+        <a href="<?php echo e(action('HomeController@index')); ?>" >首頁</a> &gt; 關於我們 &gt; 品產故事
         <p>
       </div>
      </div>   
@@ -13,21 +11,21 @@
  <div class="row">
     <div class="col-md-8 col-md-offset-1 col-xs-12">
      
-     <img src="{{ asset('images\title2.jpg') }}" class="img-responsive">
-     <img src="{{ asset('images\product_line.jpg') }}" class="img-responsive">
+     <img src="<?php echo e(asset('images\title2.jpg')); ?>" class="img-responsive">
+     <img src="<?php echo e(asset('images\product_line.jpg')); ?>" class="img-responsive">
     </div> 
       <div class="col-md-3 col-md-offset-1 col-xs-12">
-        <img src="{{ asset('images\brandp1.jpg') }}" class="img-responsive">
+        <img src="<?php echo e(asset('images\brandp1.jpg')); ?>" class="img-responsive">
       </div>
       <div class="col-md-3 col-xs-12">
-      	<img src="{{ asset('images\brandp2.jpg') }}" class="img-responsive">
+      	<img src="<?php echo e(asset('images\brandp2.jpg')); ?>" class="img-responsive">
      	  <p class="newstext">
            這是施巴最重要的信念。您的皮膚健康是我們最在意的事，我們不譁眾取寵，不標新立異，在意成份安全，合乎歐盟的所有規定，用心守護您的皮膚健康。
           </p>
       </div>
       
       <div class="col-md-11 col-md-offset-1 col-xs-12">
-        <img src="{{ asset('images\brandp3.jpg') }}" class="img-responsive" style="margin-top:10px">
+        <img src="<?php echo e(asset('images\brandp3.jpg')); ?>" class="img-responsive" style="margin-top:10px">
          <div class="col-md-7 col-xs-12">
           <p class="newstext">
            遠在1952年的一個週末，德國波昂大學的皮膚科醫師海茲默爾發現，許多患有急性濕疹的病患，被禁止使用一般肥皂來清潔皮膚，塗抹藥膏的皮膚深受又癢又黏的不舒服所苦，讓患者苦惱不已。
@@ -40,10 +38,11 @@
          </div> 
          <br>
          <div class="col-md-11 col-xs-12" style="margin-top:10px">
-           <img src="{{ asset('images\brandp4.jpg') }}" class="img-responsive" >
+           <img src="<?php echo e(asset('images\brandp4.jpg')); ?>" class="img-responsive" >
          </div>  
       </div>
 
  </div> 
 
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('seba', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

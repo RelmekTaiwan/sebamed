@@ -41,7 +41,9 @@ Route::get('brand/skincare', 'BrandController@skincare');
 Route::get('brand/award', 'BrandController@award');
 Route::get('brand/agent', 'BrandController@agent');
 
-//Route::resource('contacts', 'ContactController');
+Route::get('ask', function() {
+	return view('brand');
+});
 /*
 Route::get('contacts/create', 'ContactController@create');
 Route::post('contacts', 'ContactController@store');

@@ -15,10 +15,10 @@
   <div class="container-fluid">      
   <!-- header -->
     <div class="row">
-      <div class="col-md-6" >
+      <div class="col-md-6 hidden-xs">
         <a href="<?php echo e(action('HomeController@index')); ?>"><img src="http://www.sebamed.com.tw//images/logo.jpg"  width="125" height="85" border="0" align="left"/></a>        
       </div>  
-      <div class="col-md-6" align="right">
+      <div class="col-md-6 hidden-xs" align="right">
         <a href="http://www.sebamed.de"><img src="http://www.sebamed.com.tw//images/toplk1.jpg" name="Image17" width="33" height="40" border="0" id="Image17" width="33" /></a>
         <a href="http://www.facebook.com/sebamedtw"><img src="http://www.sebamed.com.tw//images/toplk2.jpg" name="Image18" width="33" height="40" border="0" id="Image18" width="37" /></a>
         <iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" width="100%" id="I0_1434351900375" name="I0_1434351900375" src="https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&amp;annotation=none&amp;hl=zh-TW&amp;origin=http%3A%2F%2Fwww.sebamed.com.tw&amp;url=http%3A%2F%2Fwww.sebamed.com.tw%2F&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.zh_TW.84iMcNh0Yic.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCPiVk5hLzu-VYl8GYK0br6NsqTnSg#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1434351900375&amp;parent=http%3A%2F%2Fwww.sebamed.com.tw&amp;pfname=&amp;rpctoken=15019064" data-gapiattached="true" title="+1">
@@ -26,24 +26,39 @@
        </div>
     </div>
 
-  <!-- header end -->
+    <div class="row">
+      <div class="col-xs-12 hidden-md hidden-sm hidden-lg" style="margin-bottom:20px">
+      </div>
+    </div>
 
+  <!-- header end -->
+   
    <nav class="navbar navbar-default">
     <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
-     <div class="navbar-header">
+     <div class="navbar-header" >
        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
          <span class="sr-only">Toggle navigation</span>
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
        </button>
-      <a class="navbar-brand" href="<?php echo e(action('NewsController@index')); ?>">最新消息</a>
+       <div class="col-md-12 hidden-md hidden-sm hidden-lg">
+        <a href="<?php echo e(action('HomeController@index')); ?>">
+          <img class="navbar-brand" src="<?php echo e(asset('images/logo.jpg')); ?>" width="70px" height="120px" style="width:75px height:54px">
+        </a>
+       </div>
+       <div class="col-md-12 hidden-xs">
+        <a class="navbar-brand" href="<?php echo e(action('NewsController@index')); ?>">最新消息</a>
+       </div>
+      
+      <!--<a class="navbar-brand" href="<?php echo e(action('NewsController@index')); ?>">最新消息</a>-->
      </div>
 
     <!-- Collect the nav links, forms, and other content for toggling //aria-haspopup="true"// -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><a class="dropdown-toggle hidden-sm hidden-md hidden-lg" href="<?php echo e(action('NewsController@index')); ?>">最新消息</a></li>
         <li><a href="http://www.sebamed.com.tw/index.php/home/video">影音專區</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">產品櫥窗 <span class="caret"></span></a>
@@ -56,11 +71,11 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle hidden-sm" data-toggle="dropdown" role="button" aria-expanded="false">關於我們 <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="http://www.sebamed.com.tw/index.php/home/brand">品牌故事</a></li>
-            <li><a href="http://www.sebamed.com.tw/index.php/home/brand/2">海茲默爾醫師</a></li>
-            <li><a href="http://www.sebamed.com.tw/index.php/home/brand/3">醫學皮膚護理</a></li>
-            <li><a href="http://www.sebamed.com.tw/index.php/home/brand/4">得獎事蹟</a></li>
-            <li><a href="http://www.sebamed.com.tw/index.php/home/brand/5">總代理商</a></li>
+            <li><a href="<?php echo e(action('BrandController@index')); ?>">品牌故事</a></li>
+            <li><a href="<?php echo e(action('BrandController@doctor')); ?>">海茲默爾醫師</a></li>
+            <li><a href="<?php echo e(action('BrandController@skincare')); ?>">醫學皮膚護理</a></li>
+            <li><a href="<?php echo e(action('BrandController@award')); ?>">得獎事蹟</a></li>
+            <li><a href="<?php echo e(action('BrandController@agent')); ?>">總代理商</a></li>
           </ul>
         </li>
         <li class="dropdown">

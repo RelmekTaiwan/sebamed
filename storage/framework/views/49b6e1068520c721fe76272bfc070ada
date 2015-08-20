@@ -11,7 +11,7 @@
     <div class="row">
      <div class="col-md-9 col-md-offset-1 col-xs-12" >
      	<img src="<?php echo e(asset('images\product_line.jpg')); ?>" class="img-responsive">
-     	<p><img src="<?php echo e(asset('images\news\title3.jpg')); ?>" class="img-responsive"></p>  
+     	<p><img src="<?php echo e(asset('images\news\title3.jpg')); ?>" class="img-responsive hidden-xs"></p>  
 		  <?php foreach($functionalities as $functionality): ?>
 		    <a href="<?php echo e(action('FunctionalityController@show', [$functionality->id])); ?>">
 		    <img src="<?php echo e(asset('images/functionalities/'.$functionality->image1)); ?>" >

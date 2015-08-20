@@ -94,6 +94,42 @@
 	text-decoration: none;
 	font-weight: lighter;
 }
+
+.pdtx {
+	font-size: 12px;
+	color: #333333;
+	text-decoration: none;
+	line-height: 18px;
+	letter-spacing: 0.1em;
+	margin-top: 7px;
+	text-align: center;
+}
+.pdtx  a:link{
+	font-size: 12px;
+	color: #333333;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+}
+
+.pdtx  A:visited{
+	font-size: 12px;
+	color: #333333;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+}
+
+.pdtx  A:hover{
+	font-size: 12px;
+	color: #3C7646;
+	text-decoration: underline;
+	letter-spacing: 0.1em;
+}
+.t3 {
+	font-size: 14px;
+	color: #333333;
+	font-weight: bold;
+	text-decoration: none;
+}
 /*news list*/
 .table-striped>tbody>tr a{
 	width: 100%;
@@ -133,7 +169,7 @@
 	height:50px;
 	padding:15px 15px;
 	font-size:18px;
-	background-color: #3C7646;
+	
 	line-height:20px;
 	color:#FFFFFF
 	}
@@ -147,7 +183,7 @@
 /* navbar 導覽列 */
 @media (min-width:768px){
 	.navbar>.container .navbar-brand,.navbar>.container-fluid .navbar-brand{
-navbar-brand
+
 		margin-left:-15px;
     }
 }
@@ -276,9 +312,9 @@ navbar-brand
 		max-height:200px;
 	}
 }
-/* navbar-collapse */
+/* navbar-collapse button*/
 .container-fluid>.navbar-collapse,.container-fluid>.navbar-header,.container>.navbar-collapse,.container>.navbar-header{
-	margin-right:-15px;
+	margin-right:0px; /*collapse button right=0px*/
 	margin-left:-15px;
 }
 /* navbar-collapse */
@@ -293,7 +329,7 @@ navbar-brand
 /*copy from bootstrap.min.css*/
 .container{
 	padding-right:0px;
-	padding-left:15px;
+	padding-left:0px;
 	margin-right:auto;
 	margin-left:auto
 }

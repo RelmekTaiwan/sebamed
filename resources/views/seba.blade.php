@@ -43,12 +43,22 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
        </button>
-      <a class="navbar-brand" href="{{ action('NewsController@index')}}">最新消息</a>
+       <div class="col-md-12 hidden-md hidden-sm hidden-lg">
+        <a href="{{ action('HomeController@index')}}">
+          <img class="navbar-brand" src="{{ asset('images/logo.jpg') }}" width="70px" height="120px" style="width:75px height:54px">
+        </a>
+       </div>
+       <div class="col-md-12 hidden-xs">
+        <a class="navbar-brand" href="{{ action('NewsController@index')}}">最新消息</a>
+       </div>
+      
+      <!--<a class="navbar-brand" href="{{ action('NewsController@index')}}">最新消息</a>-->
      </div>
 
     <!-- Collect the nav links, forms, and other content for toggling //aria-haspopup="true"// -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><a class="dropdown-toggle hidden-sm hidden-md hidden-lg" href="{{ action('NewsController@index')}}">最新消息</a></li>
         <li><a href="http://www.sebamed.com.tw/index.php/home/video">影音專區</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">產品櫥窗 <span class="caret"></span></a>

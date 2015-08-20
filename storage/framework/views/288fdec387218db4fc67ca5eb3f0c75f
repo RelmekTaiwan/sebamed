@@ -2,7 +2,7 @@
   <div class="row">
      <div class="col-md-9 col-md-offset-1 col-xs-12" >
       <div class="list" id="pag_list"> 
-        <a href="<?php echo e(action('HomeController@index')); ?>">首頁</a> &gt; 產品櫥窗 &gt; <a href="<?php echo e(action('SeriesController@index')); ?>">依系列區分</a>&gt;  產品
+        <a href="<?php echo e(action('HomeController@index')); ?>">首頁</a> &gt; 產品櫥窗 &gt; <a href="<?php echo e(action('SeriesController@index')); ?>">依系列區分</a> &gt;  產品
         <p>
       </div>
    </div>   
@@ -11,14 +11,16 @@
    <div class="row">
    	 <div class="col-md-8 col-md-offset-1 col-xs-12" >
        <img src="<?php echo e(asset('images\product_line.jpg')); ?>" class="img-responsive">
-       <img src="<?php echo e(asset('images/series/' .$series->series_banner)); ?>" class="img-responsive" width="100%">
+       <img src="<?php echo e(asset('images/series/' .$series->series_banner)); ?>" class="img-responsive hidden-xs" width="100%">
      	
           <?php foreach($products as $key => $product): ?>
            <div class="col-md-4 col-sm-6 col-xs-6" style="text-align:center">
             <a href="#" data-toggle="modal" data-target="#myModal_<?=$key;?>">
              <img src="<?php echo e(asset('images/products/small/'.$product->image1)); ?>" ></a>
             <br> 
-            <a href="#" data-toggle="modal" data-target="#myModal_<?=$key;?>"><?php echo $product->name; ?></a>
+            <div class="pdtx">
+             <a href="#" data-toggle="modal" data-target="#myModal_<?=$key;?>"><?php echo $product->name; ?></a>
+            </div> 
            </div>
               
 	        <!-- Modal -->
@@ -36,7 +38,7 @@
 	           <img src="<?php echo e(asset('images/products/big/'.$product->image2 )); ?>" >
 	          </div>
 	          <div class="col-md-6 col-xs-12" >
-	          	  <p><?php echo e($product->name); ?></p>
+	          	  <div class="t3"><p><?php echo e($product->name); ?></p></div>
 		          <p><?php echo e($product->name_en); ?></p>
 		          <p><?php echo $product->description; ?></p>
 		          <p>規格:<?php echo e($product->specification); ?></p>
