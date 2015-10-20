@@ -14,6 +14,13 @@ class VideoController extends Controller {
 	 *
 	 * @return Response
 	 */
+
+public function home()
+	{
+
+	}
+
+
 	public function index()
 	{
 

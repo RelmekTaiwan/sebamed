@@ -2,6 +2,7 @@
 
 use App\Banner;
 use App\News;
+use App\video;
 
 class HomeController extends Controller {
 
@@ -41,7 +42,9 @@ class HomeController extends Controller {
         $news = News::orderBy('date', 'desc')
                     ->take(5)
                     ->get();
-        return view('home', compact('banners', 'news'));
+
+        $videos = Video::orderBy('id', 'desc')->take(5)->get();
+        return view('home', compact('banners', 'news', 'videos'));
 
 	}
 	

@@ -8,7 +8,77 @@
       <script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script>
       <link href="<?php echo e(asset('/css/bootstrap-theme.min.css')); ?>" rel="stylesheet">
       <link href="<?php echo e(asset('/css/bootstrap.min.css')); ?>" rel="stylesheet">
+      <link href="<?php echo e(asset('/css/style.css')); ?>" rel="stylesheet">
       <link href="<?php echo e(asset('/css/seba.css')); ?>" rel="stylesheet">
+      <script src="<?php echo e(asset('js/jquery.aw-showcase.min.js')); ?>"></script>
+      <!-- SWIPER -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/css/swiper.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/js/swiper.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/js/swiper.jquery.min.js"></script>
+
+      <script type="text/javascript">
+      /*
+      Or with jQuery/Zepto
+      */
+      var mySwiper;
+      var mySwiperMenu;
+
+      $(function(){
+            var mySwiperMenu = $('.divMenuContainer').swiper({
+          //Your options here:
+          mode:'horizontal',
+          slidesPerView: 4,
+          loop: true,
+          freeMode: true,
+          freeModeFluid: false
+          //etc..
+        });
+
+
+        $('.divMenuWrapper > div').click(function(){
+          mySwiperMenu.swipeTo( $(this).attr("data-seq") );
+          mySwiper.swipeTo( $(this).attr("data-seq") );
+        });
+
+        $("#showcase").awShowcase(
+          {
+            content_width:      300,
+            content_height:     200,
+            fit_to_parent:      false,
+            auto:         true,
+            interval:       3000,
+            continuous:       false,
+            loading:        true,
+            tooltip_width:      200,
+            tooltip_icon_width:   32,
+            tooltip_icon_height:  32,
+            tooltip_offsetx:    18,
+            tooltip_offsety:    0,
+            arrows:         true,
+            buttons:        false,
+            btn_numbers:      false,
+            keybord_keys:     true,
+            mousetrace:       false, /* Trace x and y coordinates for the mouse */
+            pauseonover:      true,
+            stoponclick:      false,
+            transition:       'hslide', /* hslide/vslide/fade */
+            transition_delay:   0,
+            transition_speed:   500,
+            show_caption:     'onload', /* onload/onhover/show */
+            thumbnails:       false,
+            thumbnails_position:  'outside-last', /* outside-last/outside-first/inside-last/inside-first */
+            thumbnails_direction: 'vertical', /* vertical/horizontal */
+            thumbnails_slidex:    1, /* 0 = auto / 1 = slide one thumbnail / 2 = slide two thumbnails / etc. */
+            dynamic_height:     false, /* For dynamic height to work in webkit you need to set the width and height of images in the source. Usually works to only set the dimension of the first slide in the showcase. */
+            speed_change:     true, /* Set to true to prevent users from swithing more then one slide at once. */
+            viewline:       false, /* If set to true content_width, thumbnails, transition and dynamic_height will be disabled. As for dynamic height you need to set the width and height of images in the source. */
+            custom_function:    null /* Define a custom function that runs on content change */
+          });
+        });
+
+      </script>
+      <!-- SWIPER end -->
+
   </head>
  
 	<body>
@@ -96,6 +166,7 @@
           <a href="#" class="dropdown-toggle hidden-sm" data-toggle="dropdown" role="button" aria-expanded="false">相關討論 <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="https://www.facebook.com/sebamedtw">官方粉絲團</a></li>
+            <li><a href="http://www.facebook.com/babysebamedtw">嬰兒官方粉絲團</a></li>           
           </ul>
         </li>
         <li><a href="<?php echo e(action('VideoController@show')); ?>">影音專區</a></li>
@@ -125,6 +196,62 @@
    </div><!-- /.container-fluid -->
   </nav>
 
+  <!-- SWIPER -->
+    <div class="container">
+     <div class="col-xs-12 hidden-lg hidden-md hidden-sm">
+      <div class="divMenu">
+        <div class="divMenuContainer">
+          <div class="divMenuWrapper swiper-wrapper" style="text-decoration:none">
+            <div class="swiper-slide on" data-seq=0 ><a href="<?php echo e(action('VideoController@show')); ?>">影音專區</a></div>
+            <div class="swiper-slide" data-seq=1 ><a href="<?php echo e(action('SeriesController@index')); ?>">產品櫥窗</a></div>
+            <div class="swiper-slide" data-seq=2 ><a href="http://www.facebook.com/babysebamedtw">嬰兒官方粉絲團</a></div>
+            <div class="swiper-slide" data-seq=3 ><a href="https://www.facebook.com/sebamedtw">官方粉絲團</a></div>
+            <div class="swiper-slide" data-seq=4 ><a href="https://store.sebamed.com.tw/">官方購物</a></div>
+            <div class="swiper-slide" data-seq=5 ><a href="<?php echo e(action('BrandController@index')); ?>">品牌故事</a></div>
+            <div class="swiper-slide" data-seq=6 ><a href="<?php echo e(action('BrandController@doctor')); ?>">海茲默爾醫師</a></div>
+            <div class="swiper-slide" data-seq=7 ><a href="<?php echo e(action('BrandController@skincare')); ?>">醫學皮膚護理</a></div>
+            <div class="swiper-slide" data-seq=8 ><a href="<?php echo e(action('BrandController@award')); ?>">得獎事蹟</a></div>
+            <div class="swiper-slide" data-seq=9 ><a href="<?php echo e(action('WhereBuyController@show', ['onlineshop'])); ?>">網路商店</a></div>
+            <div class="swiper-slide" data-seq=10 ><a href="<?php echo e(action('WhereBuyController@show', ['deptstore'])); ?>">百貨櫃點</a></div>
+            <div class="swiper-slide" data-seq=11 ><a href="<?php echo e(action('WhereBuyController@show', ['drugstore'])); ?>">連鎖藥妝</a></div>
+            <div class="swiper-slide" data-seq=12 ><a href="<?php echo e(action('NewsController@index')); ?>">最新消息</a></div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  <!-- END SWIPER -->
+
+   <!--button fixed bottom  -->
+   <div class="btn-group btn-group-lg btn-group-justified navbar-fixed-bottom hidden-lg hidden-md hidden-sm" role="group" aria-label="...">
+      <div class="btn-group btn-default btn-group-lg" role="group">
+        <button type="button" class="btn btn-default">
+          <span class="glyphicon glyphicon-home"></span>
+          <a href="<?php echo e(action('HomeController@index')); ?>">首頁</a>
+        </button>
+      </div>
+      <div class="btn-group btn-default btn-group-lg" role="group">
+        <button type="button" class="btn btn-default">
+          <span class="glyphicon glyphicon-play-circle"></span>  
+          <a href="<?php echo e(action('VideoController@show')); ?>">影音</a>
+        </button>
+      </div>
+      <div class="btn-group btn-default btn-group-lg" role="group">
+        <button type="button" class="btn btn-default">
+          <span class="glyphicon glyphicon-barcode"></span>
+          <a href="<?php echo e(action('SeriesController@index')); ?>">產品</a>
+        </button>
+      </div>
+      <div class="btn-group btn-default btn-group-lg" role="group">
+        <button type="button" class="btn btn-default">
+          <span class="glyphicon glyphicon-shopping-cart"></span>
+          <a href="https://store.sebamed.com.tw/">購物</a>
+        </button>
+      </div>
+   </div>
+   <!-- end -->
+
+
 <?php echo $__env->yieldContent('content'); ?>
 		
 <div class="row">
@@ -132,8 +259,10 @@
     <div class="footer2">
       <img src="<?php echo e(asset('images\index_49.jpg')); ?>">   
         Copyright © 2011 Sebamed.com.,Ltd.All Rights Reserved.
-   
-       <br>進口商：利百美興業股份有限公司　　 地址：807高雄市九如二路366號11F之1　　 客服電話： 0800-000-755 　　肌膚諮詢專線： 0800-755-755  
+        <br>進口商：利百美興業股份有限公司　　 地址：807高雄市九如二路366號11F之1　　 客服電話： 0800-000-755 　　肌膚諮詢專線： 0800-755-755  
+       <div class="hidden-lg hidden-md hidden-sm">
+        </br></br></br></br>
+       </div> 
     </div> 
   </div>
  </div>

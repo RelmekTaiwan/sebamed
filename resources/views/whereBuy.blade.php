@@ -6,20 +6,20 @@
     @if ($type == 'official')
 
     @elseif($type == 'onlineshop')
-        <!--
+        
         <div class="row">
-            <div class="col-md-10 col-md-offset-1 col-xs-12">
+            <div class="col-md-9 col-md-offset-2 col-xs-12" >
                 <div class="list" id="pag_list"> 
                     <a href="{{ action('HomeController@index')}}">首頁</a> &gt; 網路商店
                     <p>
                 </div>
             </div>   
         </div>
-        -->
+        
         <div class="row">
-            <div class="col-md-9 col-md-offset-1 col-xs-12" align="center">
-                <img src="{{ asset('images\wherebuy\wheret2.jpg') }}" class="img-responsive hidden-xs">
+            <div class="col-md-9 col-md-offset-2 col-xs-12">
                 <img src="{{ asset('images\product_line.jpg') }}" class="img-responsive">
+                <img src="{{ asset('images\wherebuy\wheret2.jpg') }}" class="img-responsive hidden-xs">
                 <div class="row">    
                     <!-- <div class="col-md-3 col-md-offset-1 col-xs-12">-->
                     <div class="col-md-6 col-xs-12">
@@ -49,20 +49,20 @@
         <br>
         <br>
     @elseif($type == 'drugstore')
-        <!--
+        
         <div class="row">
-            <div class="col-md-9 col-md-offset-1 col-xs-12" >
+            <div class="col-md-9 col-md-offset-2 col-xs-12" >
                 <div class="list" id="pag_list"> 
                     <a href="{{ action('HomeController@index')}}">首頁</a> &gt; 連鎖藥妝
                     <p>
                 </div>
             </div>   
-        </div> -->
+        </div> 
 
         <div class="row">
-            <div class="col-md-9 col-md-offset-1 col-xs-12" align="center">
-                <img src="{{ asset('images\wherebuy\wheret4.jpg') }}" class="img-responsive hidden-xs">
+            <div class="col-md-9 col-md-offset-2 col-xs-12">
                 <img src="{{ asset('images\product_line.jpg') }}" class="img-responsive">
+                <img src="{{ asset('images\wherebuy\wheret4.jpg') }}" class="img-responsive hidden-xs">
                 <div class="row">    
                     <!-- <div class="col-md-3 col-md-offset-1 col-xs-12">-->
                     <div class="col-md-6 col-xs-12">
@@ -182,21 +182,52 @@
         <br>
 
     @else
- <!--       <div class="row">
-            <div class="col-md-9 col-md-offset-1 col-xs-12" >
+       <div class="row">
+            <div class="col-md-9 col-md-offset-2 col-xs-12" >
                 <div class="list" id="pag_list"> 
                     <a href="{{ action('HomeController@index')}}">首頁</a> &gt; 百貨櫃點 
                     <p>
                 </div>
             </div>   
-        </div> -->
+        </div>
         <div class="row">
-            <div class="col-md-9 col-md-offset-1 col-xs-12"  align="center">
-                <img src="{{ asset('images\wherebuy\wbdp1.jpg') }}" class="img-responsive">
+            <div class="col-md-9 col-md-offset-2 col-xs-12">
                 <img src="{{ asset('images\product_line.jpg') }}" class="img-responsive">
+                <img src="{{ asset('images\wherebuy\wbdp1.jpg') }}" class="img-responsive">
 
                 <?php $last_seq = NULL; ?>
-                <table>
+
+                    @foreach($deptstores as $store)
+                        @if ($store->sequence != $last_seq)
+                            <br>                        
+                         <!-- <table><tr>                        -->
+                            <div class="row">
+                                <div class="col-xs-12"> 
+                                <!-- <tr></tr> -->
+                                    <!-- <td><div class="circle-with-arror" class="title">&gt;</div></td> -->
+                                
+                                    <div class="title">{{ $store->area }}</div>   
+                                </div>
+                            </div>   
+                          <!-- </tr></table>     -->
+                        @endif
+                        <div class="row">
+                            <div class="col-md-8" >
+                            <!-- <div class="row"> -->
+                                <div class="col-dm-6  col-xs-6" align="left">
+                                    <!-- <div class="circle"></div> -->
+                                    <div>{{$store->address}}</div>
+                                </div> 
+                                <div class="col-dm-6  col-xs-6" style="align:left" >
+                                    <div class="div-img"><img src="http://www.sebamed.com.tw/images/dpth.jpg">{{$store->phone_num }}</div>
+                                </div> 
+                            <!-- </div> -->
+                            </div>    
+                        </div>
+
+                        <?php $last_seq = $store->sequence; ?>
+                    @endforeach
+<!--                 <table>
                     @foreach($deptstores as $store)
                         <tr>
                             @if ($store->sequence != $last_seq)
@@ -218,12 +249,10 @@
                             <td>    
                                 {{ $store->phone_num }}
                             </td>
-                            <td colspan="4"><hr>
-                            </td>
                         </tr>
                         <?php $last_seq = $store->sequence; ?>
                     @endforeach
-                </table>
+                </table> -->
 
             </div>
         </div>

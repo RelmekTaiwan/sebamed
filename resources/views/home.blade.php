@@ -36,8 +36,25 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 <br/>
+<div id="showcase" class="showcase hidden-lg hidden-md hidden-sm">
+    @foreach($videos as $store)
+     <div class="showcase-slide">
+      <!-- Put the slide content in a div with the class .showcase-content. -->
+      <div class="showcase-content">
+       
+        <?php
+          $abc = "<iframe width=\"300\" height=\"200\" src=\"$store->url\"";
+
+          $abc .= " frameborder=\"0\" allowfullscreen></iframe>";
+          echo $abc;
+        ?>
+        
+      </div>
+    </div>
+   @endforeach
+  </div>
+
 <br/>
 
   <div class="container"> 

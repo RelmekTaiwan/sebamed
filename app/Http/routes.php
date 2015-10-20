@@ -58,3 +58,4 @@ Route::get('video', 'VideoController@show');
 //contact us page
 Route::get('contacts/create', 'ContactController@create');
 Route::post('contacts', 'ContactController@store');
+

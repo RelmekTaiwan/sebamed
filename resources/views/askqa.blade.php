@@ -1,19 +1,19 @@
 @extends('seba')
 
 @section('content')
-<!--  <div class="row">
-     <div class="col-md-9 col-md-offset-1 col-xs-12" >
+ <div class="row">
+     <div class="col-md-8 col-md-offset-2 col-xs-12" >
       <div class="list" id="pag_list"> 
         <a href="{{ action('HomeController@index')}}">首頁</a> &gt; 諮詢服務 &gt; 產品問答
         <p>
       </div>
      </div>   
- </div> -->
+ </div>
 
   <div class="row">
     <div class="col-md-8 col-md-offset-2 col-xs-12">
-     <img src="{{ asset('images\ask\ask1.jpg') }}" class="img-responsive hidden-xs">
      <img src="{{ asset('images\product_line.jpg') }}" class="img-responsive">
+     <img src="{{ asset('images\ask\ask1.jpg') }}" class="img-responsive hidden-xs">
      <img src="{{ asset('images\ask\askp1.jpg') }}" class="img-responsive hidden-xs">
     </div>
 
