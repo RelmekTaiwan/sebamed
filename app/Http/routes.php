@@ -54,8 +54,7 @@ Route::get('ask', function() {
 // Route::get('video', 'videoController@show');
 Route::get('video', 'VideoController@show');
 
-//Route::resource('contacts', 'ContactController');
-/*
+
+//contact us page
 Route::get('contacts/create', 'ContactController@create');
 Route::post('contacts', 'ContactController@store');
-*/

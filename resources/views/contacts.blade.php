@@ -1,4 +1,4 @@
-@extends('app')
+@extends('seba')
 
 @section('content')
     <div class="container">
@@ -11,8 +11,8 @@
                 {!! Form::text('email', null, ['class' => 'form-control']) !!}
                 {!! Form::label('content', '留言內容: ') !!}
                 {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
-                {!! Form::submit('送出') !!}
             </div>
+                {!! Form::submit('送出', ['class' => 'form-control']) !!}
         {!! Form::close() !!}
         </div>
         <div>
